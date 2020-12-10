@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Html Forms</title>
+	<script type="text/javascript">
+		function validateRegistration(){
+			var fName=document.getElementById("firstName").value;
+			if(fName.length<2){
+				document.getElementById("name").style.color="red";
+				document.getElementById("name").innerHTML="Invalid Name";
+			}
+			else{
+				document.getElementById("name").style.color="green";
+				document.getElementById("name").innerHTML="Valid";
+			}
+		}
+
+		function validateContact(){
+			var contact=document.getElementById("phone").value;
+			if(contact.length>12){
+				document.getElementById("cont").style.color="red";
+				document.getElementById("cont").innerHTML="Invalid Number";
+			}
+			else{
+				document.getElementById("cont").style.color="green";
+				document.getElementById("cont").innerHTML="Valid";
+			}
+		}
+	</script>
+
+	<style type="text/css">
+		
+        body {
+    font-size: 16px;
+    background: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80) 
+        no-repeat center center fixed;
+    font-family: gotham-book;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: gotham;
+}
+h2 {
+    text-align: left;
+    color: black;
+    text-decoration: bold;
+}
+form {
+    width: 300px;
+    background: url(https://s3-us-west-2.amazonaws.com/staticresources123/site/other/landings/event-registration/group-41.jpg);
+    padding: 15px 40px 40px;
+    border: 2px black;
+    margin: 50px auto 0;
+    border-radius: 5px;
+}
+label {
+    display: block;
+    margin-bottom: 5px
+}
+label i {
+    color: black;
+    font-size: 50%;
+}
+input, select {
+    border: 1px solid grey;
+    padding: 10px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.row {
+    padding-bottom: 10px;
+}
+.form-inline {
+    border: 1px solid white;
+    padding: 8px 10px 4px;
+    border-radius: 2px;
+}
+.form-inline label, .form-inline input {
+    display: inline-block;
+    width: auto;
+    padding-right: 15px;
+}
+.error {
+    color: yellow;
+    font-size: 90%;
+}
+input[type="submit"] {
+    font-size: 110%;
+    font-weight: 100;
+    background: blue;
+    box-shadow:  1px pink;
+    color: white;
+    margin-top: 10px;
+    cursor: pointer;
+}
+input[type="submit"]:hover {
+    background: blue;
+}
+
+
+
+
+
+
+
+#btn_i{
+    width: 100px;
+    margin-left: 100px;
+    margin-right: -100px;
+    align-items: center;
+}
+        
+    </style>
+</head>
+<body>
+	
+        <h1 align="center">REGISTRATION FORM</h1>
+        <hr>
+      		<form method="post">
+      			<table border="0" align="center">
+      				<tr>
+      					<td id="td">First Name:</td><td><input type="text" id="firstName" placeholder="Your first name" onblur="validateRegistration();" required /></td><td><span id="name"></span></td>
+      				</tr><br>
+      				<tr>
+      					<td id="td">Last Name:</td><td><input type="text" id="lastName" placeholder="Your last name" required></td></tr><br>
+      				</tr>
+      				<tr>
+      					<td id="td">Qualifications:</td><td><select name="course" id="qualifications" required>
+      						<option value="B.E">B.E</option>
+      						<option value="B.Tech">B.Tech</option>
+      						<option value="MBA">MBA</option>
+      						<option value="BCA">BCA</option>
+      					</td>
+      				</tr>
+      				<tr>
+      					<td id="td">Birth-Date:</td><td><input type="date" id="birthday"></td>
+      				</tr>
+      				<tr>
+      					<td id="td">Contact:</td><td><input type="tel" id="phone"  placeholder="10 Digit Mobile Number" pattern="75770XXXXX" onblur="validateContact();" required></td><td><span id="cont"></span></td>
+      				</tr>
+        <tr>
+        	<td id="td">Address:</td><td><textarea required></textarea></td>
+        </tr>
+        <tr>
+        	<td id="td">Email:</td><td><input type="email" id="email" placeholder="Enter your email" required></td>
+        </tr>
+        <tr>
+        	<td><br></td>
+        </tr>
+        
+        <tr>
+        	<<td><button class="button" name="Register" id="btn_i">Register</td>
+        </tr>
+    </table>
+	</form>
+</div>
+
+</body>
+</html>
